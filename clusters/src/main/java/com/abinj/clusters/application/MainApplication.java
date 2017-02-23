@@ -1,5 +1,6 @@
 package com.abinj.clusters.application;
 
+import com.abinj.clusters.vertcles.AdminHandler;
 import com.abinj.clusters.vertcles.UserHandler;
 import io.vertx.core.Vertx;
 import io.vertx.core.VertxOptions;
@@ -17,6 +18,7 @@ public class MainApplication {
             } else {
                 Vertx vertx = vertxAsyncResult.result();
                 vertx.deployVerticle(new UserHandler());
+                vertx.deployVerticle(new AdminHandler());
             }
         });
     }
